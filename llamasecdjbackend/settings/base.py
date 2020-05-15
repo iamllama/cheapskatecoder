@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_extensions',
     'corsheaders',
+    'drf_yasg',
 
     'blog',
 ]
