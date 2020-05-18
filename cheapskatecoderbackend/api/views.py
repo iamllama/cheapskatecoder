@@ -8,8 +8,9 @@ from blog.models import *
 
 class BlogModelViewSet(ModelViewSet):
     permission_classes = [AllowAny, ]
-    queryset = Blog.objects.all()
+    queryset = Blog.objects.filter(is_published=True)
     serializer_class = BlogModelSerializer
+
 
 
 class SeriesModelViewSet(ModelViewSet):

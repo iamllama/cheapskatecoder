@@ -10,7 +10,7 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'llamasec',
+        'NAME': 'cheapskatecoder',
         'USER': 'postgres',
         'PASSWORD': 'postgres'
     }
