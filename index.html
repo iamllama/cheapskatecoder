@@ -9,20 +9,17 @@
     <title>cheapskatecoder - Your single stop for everything technology</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="assets/css/master.css">
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <!-- Buy me a coffee google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 
     <!-- Font Awesome JS -->
     <script defer src="https://friconix.com/cdn/friconix.js">
     </script>
-
 </head>
 
 <body>
@@ -77,68 +74,145 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fi-xnluxl-three-bars"></i>
                         <span>cheapskatecoder</span>
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fi-xnluxl-three-bars"></i>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="bmc-button" target="_blank"
-                                    href="https://www.buymeacoffee.com/cheapskatecoder"><img
-                                        src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg"
-                                        alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
+                                <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/cheapskatecoder"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
+                            </li>
+                            <li class='nav-item'>
+                                <div class="toggleWrapper">
+                                    <input type="checkbox" class="dn" id="dn" />
+                                    <label for="dn" class="toggle">
+                                  <span class="toggle__handler">
+                                    <span class="crater crater--1"></span>
+                                    <span class="crater crater--2"></span>
+                                    <span class="crater crater--3"></span>
+                                  </span>
+                                  <span class="star star--1"></span>
+                                  <span class="star star--2"></span>
+                                  <span class="star star--3"></span>
+                                  <span class="star star--4"></span>
+                                  <span class="star star--5"></span>
+                                  <span class="star star--6"></span>
+                                </label>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <!-- Actual Content -->
-            <div class="row">
-                <div class="col-12"></div>
-            </div>
+            <section>
+                <div>
+                    <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <h1 class="justify-content-center">cheapskatecoder</h1>
+                            <p class="justify-content-center">This blog is dedicated to encompass my journey in the Infosec and the Programming industry and hopefully help someone out with the troubles that I once faced. I hope to see you join me and experience the adventures of a <code>script kiddie</code>                                to become a pro.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <img id="headerimage" src="assets/img/header-web-security.png" alt="Vector designed obtained from the website VECTEEZY.com" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+
+            <section>
+                <h2 class="h2 text-center">These are the three main things that I'd be focusing on mainly</h2>
+                <p id="lead-text text-center" class="section-lead">All of these topics are immense on their own and to cover them in it's entirety would be impossible however, I try to cover most important aspects in extensive detail :)</p>
+                <div class="container">
+                    <div class="row row-eq-height">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card service1">
+                                <img alt="" class="img-fluid" src="assets/img/bughunting.png">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bug Hunting</h5>
+                                    <p class="card-text">Bug hunting is the practise of finding out vulnerabilites in Websites, Android apps any software or service you can think of. I'd be focusing on building upon the existing methodologies and try to build one of my own.</p>
+                                    <a href="#" class="cta">Read More <span class="ti-angle-right"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card service2">
+                                <img alt="" class="img-fluid rounded-circle" src="assets/img/coding.png">
+                                <div class="card-body">
+                                    <h5 class="card-title">Programming</h5>
+                                    <p class="card-text">Programming as a whole is massive, so I'll mainly be focusing on Web App programming, Database handling, Datastructures and writing quick little scripts to automate tasks.</p>
+                                    <a href="#" class="cta">Read More <span class="ti-angle-right"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card service3">
+                                <img class="img-thumbnail rounded-circle img-fluid" alt="" src="assets/img/re.png">
+                                <div class="card-body">
+                                    <h5 class="card-title">Reverse Engineering</h5>
+                                    <p class="card-text">Reverse Engineering is deconstructing software to reveal it's internal logic and architecture. I'll be focusing mostly on assembly and following <a target="_blank" href="https://securedorg.github.io/">Malware Unicorn's Guide</a>.
+                                    </p>
+                                    <a href="#" class="cta">Read More <span class="ti-angle-right"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section style="margin-top: 3rem;">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 text-center">
+                            <img alt="llama" src="assets/img/me.jpg" align="center" class="img-fluid rounded-circle text-right">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-7 col-lg-8">
+                            <h2>Who Am I?</h2>
+                            <p>I am a llama. I used to live happily in Andes, but one day my parents decided to gift me a computer. That's when the curiosity began. I started coding static html only websites, like most of the 90's computer savvy llama's
+                                did. One of my best friends pushed me into the computer science field. Right now I am a senior year college student, at the verge of completing my BCA. I am also a part time bug bounty hunter, and a full time programmer.
+                                I strive to become a better security researcher, and hopefully share a beer with <a href="https://twitter.com/jhaddix">Mr. Json Haddix</a>, <a href="https://twitter.com/malwareunicorn">Malware Unicorn</a>, <a href="https://twitter.com/nnwakelam">Naffy</a>,
+                                <a href="https://twitter.com/blackroomsec">BlackRoomSec</a> or with <a href="https://twitter.com/hacks4pancakes">Hacks4Pancakes</a> who have been my inspiration throughout my entire journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 
     <div class="overlay"></div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
             });
 
-            $('#dismiss, .overlay').on('click', function () {
+            $('#dismiss, .overlay').on('click', function() {
                 $('#sidebar').removeClass('active');
                 $('.overlay').removeClass('active');
             });
 
-            $('#sidebarCollapse').on('click', function () {
+            $('#sidebarCollapse').on('click', function() {
                 $('#sidebar').addClass('active');
                 $('.overlay').addClass('active');
                 $('.collapse.in').toggleClass('in');
