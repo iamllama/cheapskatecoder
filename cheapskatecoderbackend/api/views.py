@@ -26,7 +26,6 @@ class CategoryModelViewSet(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategoryModelSerializer
 
-
 class LoginAPI(APIView):
     serializer_class = LoginSerializer
     queryset = User.objects.none()
@@ -35,13 +34,13 @@ class LoginAPI(APIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid()
         user = serializer.validated_data
+        user_data = UserModelSerializer(user, many=False)
+        user_data_and_token = {'token': AuthToken.objects.create(user)[1]}
+        user_data_and_token.update(user_data.data)
         if user:
-                return Response({
-                        "token": AuthToken.objects.create(user)[1]
-                })
+                return Response(user_data_and_token)
         else:
                 return Response({"Error": "User credentials are invalid!"}, status=status.HTTP_400_BAD_REQUEST)
-
 
 class UserModelViewSet(ModelViewSet):
     queryset = User.objects.all()
