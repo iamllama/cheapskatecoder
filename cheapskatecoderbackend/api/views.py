@@ -2,27 +2,28 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import  Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny, AllowAny
 from api.serializers import *
 from blog.models import *
 from knox.models import AuthToken
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class BlogModelViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [AllowAny, ]
     queryset = Blog.objects.filter(is_published=True)
     serializer_class = BlogModelSerializer
 
 
 class SeriesModelViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [AllowAny, ]
     queryset = Series.objects.all()
     serializer_class = SeriesModelSerializer
 
 
 
 class CategoryModelViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [AllowAny, ]
     queryset = Category.objects.all()
     serializer_class = CategoryModelSerializer
 
@@ -45,18 +46,25 @@ class LoginAPI(APIView):
 class UserModelViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [AllowAny, ]
 
 
 class UserDetails(ModelViewSet):
     queryset = User.objects.none()
     serializer_class = UserModelSerializer
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (AllowAny, )
     http_method_names = ('head', 'option', 'get')
 
     def list(self, request):
         queryset = User.objects.get(username=request.user)
         serializer = self.serializer_class(queryset)
-        print(serializer.data)
 
         return Response(serializer.data)
+
+
+class TopNineBlogs(APIView):
+    permission_classes = [AllowAny]
+    def get(self, request):
+        top_nine_blogs = Blog.objects.all().order_by('-id')[:9]
+        serialized_data = BlogModelSerializer(top_nine_blogs, many=True)
+        return Response(serialized_data.data, status=status.HTTP_200_OK)

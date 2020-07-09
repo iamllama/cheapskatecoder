@@ -36,6 +36,7 @@ urlpatterns = [
    re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
    path('login', views.LoginAPI.as_view(), name='login'),
+   path('top-9-blogs', views.TopNineBlogs.as_view(), name='top-9'),
 ]
 
 urlpatterns += router.urls

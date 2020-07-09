@@ -17,3 +17,4 @@ DATABASES = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+SITE_URL = 'http://localhost:55403'

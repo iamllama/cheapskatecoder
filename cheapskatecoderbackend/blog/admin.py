@@ -6,7 +6,7 @@ class BlogAdmin(admin.ModelAdmin):
     raw_id_fields = ['author']
     filter_horizontal = ['series', 'categories']
     fields = ['title', 'slug', 'meta_summary', 'blog_content', 'author', 'is_published',
-    'date_published', 'date_updated', 'date_saved_draft', 'series', 'categories']
+    'date_published', 'date_updated', 'date_saved_draft', 'series', 'categories', 'blog_image']
     readonly_fields = ['date_published', 'date_updated', 'date_saved_draft']
 
 admin.site.register(Blog, BlogAdmin)

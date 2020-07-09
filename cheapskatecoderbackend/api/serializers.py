@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import User
 from rest_framework.serializers import  ModelSerializer
 from blog.models import *
@@ -8,13 +9,17 @@ from django.contrib.auth import authenticate
 
 class BlogModelSerializer(ModelSerializer):
     username = SerializerMethodField()
+    blog_image = serializers.SerializerMethodField()
+
+    def get_blog_image(self, instance):
+        return settings.SITE_URL+instance.blog_image.url
 
     def get_username(self, instance):
         return instance.author.username
 
     class Meta:
         model = Blog
-        fields = ('title', 'slug', 'meta_summary', 'blog_content', 'date_published', 'series', 'categories', 'username')
+        fields = ('title', 'slug', 'meta_summary', 'blog_content', 'date_published', 'series', 'categories', 'username', 'blog_image')
         depth = 1
 
 

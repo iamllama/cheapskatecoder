@@ -1,12 +1,18 @@
+import os
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.template.defaultfilters import slugify
 
 
+def _save_blog_upload_image_files(instance, filename):
+    pass
+
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     slug = models.CharField(max_length=255, null=True, blank=True)
+    blog_image = models.FileField(null=True, blank=True, max_length=255)
     meta_summary = models.TextField(null=True, blank=True)
     blog_content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -27,7 +33,7 @@ class Blog(models.Model):
         if self.is_published:
             self.date_published = timezone.now()
         super(Blog, self).save(*args, **kwargs)
-
+    
 
 class Series(models.Model):
     title = models.CharField(max_length=255)
