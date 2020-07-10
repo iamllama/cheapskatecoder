@@ -1,7 +1,9 @@
 export default class Blog {
     id: BigInteger;
     title: string;
-    blog_image: string;
+    slug: string;
+    blog_thumbnail: string;
+    blog_banner_image: string;
     meta_summary: string;
     blog_content: string;
     author: string;

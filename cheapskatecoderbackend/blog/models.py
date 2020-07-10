@@ -12,7 +12,8 @@ def _save_blog_upload_image_files(instance, filename):
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     slug = models.CharField(max_length=255, null=True, blank=True)
-    blog_image = models.FileField(null=True, blank=True, max_length=255)
+    blog_thumbnail = models.FileField(null=True, blank=True, max_length=255)
+    blog_banner_image = models.FileField(null=True, blank=True, max_length=255)
     meta_summary = models.TextField(null=True, blank=True)
     blog_content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -48,3 +49,17 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=False, blank=False, on_delete=models.CASCADE)
+    profile_photo = models.FileField(upload_to='authors/', null=True, blank=True)
+    about_me = models.TextField(null=True, blank=True)
+    created_on  = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_on = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    def __str__(self):
+        return "{}".format(self.user.username)
+
+    class Meta:
+        verbose_name = 'User Profile'
+        verbose_name_plural = 'User Profiles'

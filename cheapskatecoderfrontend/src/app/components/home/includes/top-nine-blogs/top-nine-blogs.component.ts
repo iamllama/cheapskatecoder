@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TopNineBlogsService} from './../../../../services/includes/top-nine-blogs.service';
+import Blog from './../../../../models/blog.models';
 
 @Component({
   selector: 'app-top-nine-blogs',
@@ -10,11 +11,12 @@ import {TopNineBlogsService} from './../../../../services/includes/top-nine-blog
 export class TopNineBlogsComponent implements OnInit {
 
   constructor(private top9blogservice: TopNineBlogsService) { }
-  topNineBlogs;
+  topNineBlogs: Blog[] = new Array<Blog>();
 
   ngOnInit(): void {
-    this.top9blogservice.getTopNineBlogs().subscribe(response => this.topNineBlogs = response);
-    console.log(this.topNineBlogs);
+    this.top9blogservice.getTopNineBlogs().subscribe(response => {
+      this.topNineBlogs = response;
+    });
   }
 
 }

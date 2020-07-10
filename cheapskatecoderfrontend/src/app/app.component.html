@@ -6,7 +6,7 @@
         class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light"
       >
         <div class="container">
-          <a class="navbar-brand text-dark" routerLink="">CheapSkateCoder</a
+          <a class="navbar-brand text-dark" routerLink="">{{ title }}</a
           ><button
             class="navbar-toggler"
             type="button"
@@ -305,22 +305,72 @@
     </main>
   </div>
   <router-outlet></router-outlet>
+  <div class="page-header-content bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1 class="page-header-title">Signup to the Newsletter</h1>
+          <p class="page-header-text mb-5">
+            I don't spam! To get the latest news and tutorials about all things technology! 
+          </p>
+          <form class="page-header-signup mb-2 mb-md-0">
+            <div class="form-row justify-content-center">
+              <div class="col-md-8">
+                <div class="form-group mr-0 mr-lg-2">
+                  <label class="sr-only" for="inputEmail"
+                    >Enter your email...</label
+                  ><input
+                    class="form-control form-control-solid rounded-pill"
+                    id="inputEmail"
+                    type="email"
+                    placeholder="Enter your email..."
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <button
+                  class="btn btn-primary btn-block btn-marketing rounded-pill"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <img
+            class="img-fluid"
+            src="assets/img/drawkit/color/drawkit-user-mobile-color.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="layoutDefault_footer">
     <footer class="footer pt-10 pb-5 mt-auto bg-dark footer-dark">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <div class="footer-brand">CheapSkateCoder</div>
-            <div class="mb-3">Level up your coding skills.</div>
+            <div class="footer-brand">{{ title }}</div>
+            <div class="mb-3">
+              Scripting through life the cheapest way possible.
+            </div>
             <div class="icon-list-social mb-5">
-              <a class="icon-list-social-link" href="javascript:void(0);"
-                ><i class="fab fa-instagram"></i></a
-              ><a class="icon-list-social-link" href="javascript:void(0);"
-                ><i class="fab fa-facebook"></i></a
-              ><a class="icon-list-social-link" href="javascript:void(0);"
+              <a
+                class="icon-list-social-link"
+                target="_blank"
+                href="https://github.com/iamllama/"
                 ><i class="fab fa-github"></i></a
-              ><a class="icon-list-social-link" href="javascript:void(0);"
+              ><a
+                class="icon-list-social-link"
+                href="https://twitter.com/cheapskatecoder"
                 ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="icon-list-social-link"
+                href="https://youtube.com/techruse"
+                ><i class="fab fa-youtube"></i
               ></a>
             </div>
           </div>
@@ -387,10 +437,12 @@
                 <div class="text-uppercase-expanded text-xs mb-4">Legal</div>
                 <ul class="list-unstyled mb-0">
                   <li class="mb-2">
-                    <a  routerLink="privacy-policy">Privacy Policy</a>
+                    <a routerLink="privacy-policy">Privacy Policy</a>
                   </li>
                   <li class="mb-2">
-                    <a routerLink="terms-and-conditions">Terms and Conditions</a>
+                    <a routerLink="terms-and-conditions"
+                      >Terms and Conditions</a
+                    >
                   </li>
                   <li><a href="javascript:void(0);">License</a></li>
                 </ul>
@@ -400,11 +452,13 @@
         </div>
         <hr class="my-5" />
         <div class="row align-items-center">
-          <div class="col-md-6 small">Copyright &#xA9; Cheapskatecoder 2020</div>
+          <div class="col-md-6 small">
+            Copyright &#xA9; Cheapskatecoder 2020
+          </div>
           <div class="col-md-6 text-md-right small">
             <a routerLink="privacy-policy">Privacy Policy</a>
             &#xB7;
-            <a href="javascript:void(0);">Terms &amp; Conditions</a>
+            <a routerLink="terms-and-conditions">Terms &amp; Conditions</a>
           </div>
         </div>
       </div>

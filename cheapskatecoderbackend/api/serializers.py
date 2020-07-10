@@ -9,17 +9,28 @@ from django.contrib.auth import authenticate
 
 class BlogModelSerializer(ModelSerializer):
     username = SerializerMethodField()
-    blog_image = serializers.SerializerMethodField()
+    blog_thumbnail = serializers.SerializerMethodField()
+    blog_banner_image = serializers.SerializerMethodField()
 
-    def get_blog_image(self, instance):
-        return settings.SITE_URL+instance.blog_image.url
+    def get_blog_banner_image(self, instance):
+        try:
+            return settings.SITE_URL+instance.blog_banner_image.url
+        except Exception as e:
+            return ""
+
+    def get_blog_thumbnail(self, instance):
+        try:
+            return settings.SITE_URL+instance.blog_thumbnail.url
+        except Exception as e:
+            return ""
 
     def get_username(self, instance):
         return instance.author.username
 
     class Meta:
         model = Blog
-        fields = ('title', 'slug', 'meta_summary', 'blog_content', 'date_published', 'series', 'categories', 'username', 'blog_image')
+        fields = ('title', 'slug', 'meta_summary', 'blog_content', 'date_published', 'series', 'categories', 'username', 'blog_thumbnail',
+                'blog_banner_image')
         depth = 1
 
 

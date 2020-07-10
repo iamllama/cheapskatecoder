@@ -11,7 +11,7 @@ export class TopNineBlogsService {
 
   constructor(private http: HttpClient) { }
 
-  getTopNineBlogs() {
+  getTopNineBlogs(): Observable<Blog[]> {
     return this.http.get<any>(environment.API_PREFIX + 'top-9-blogs');
   }
 }

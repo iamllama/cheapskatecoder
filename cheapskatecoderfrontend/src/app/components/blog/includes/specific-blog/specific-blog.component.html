@@ -1,0 +1,62 @@
+<section class="bg-light py-10">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-8">
+        <div class="single-post">
+          <h1>{{specificBlog.title}}</h1>
+          <p class="lead">
+              {{specificBlog.meta_summary}}
+          </p>
+          <div class="d-flex align-items-center justify-content-between mb-5">
+            <div class="single-post-meta mr-4">
+              <img
+                class="single-post-meta-img"
+                src="{{specificBlog.blog_banner_image}}"
+              />
+              <div class="single-post-meta-details">
+                <div class="single-post-meta-details-name">Valerie Luna</div>
+                <div class="single-post-meta-details-date">
+                  Feb 5 &#xB7; 6 min read
+                </div>
+              </div>
+            </div>
+            <div class="single-post-meta-links">
+              <a href="#!"><i class="fab fa-twitter fa-fw"></i></a
+              ><a href="#!"><i class="fab fa-facebook-f fa-fw"></i></a
+              ><a href="#!"><i class="fas fa-bookmark fa-fw"></i></a>
+            </div>
+          </div>
+          <img
+            class="img-fluid mb-2"
+            src="{{specificBlog.blog_banner_image}}"
+          />
+          <div class="small text-gray-500 text-center">
+            Photo Credit: Unsplash
+          </div>
+          <div class="single-post-text my-5" [innerHTML]="specificBlog.blog_content">
+            <hr class="my-5" />
+            <div class="text-center">
+              <a
+                class="btn btn-transparent-dark btn-marketing rounded-pill"
+                href="page-blog-overview.html"
+                >Back to Blog Overview</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="svg-border-rounded text-light">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 144.54 17.34"
+      preserveAspectRatio="none"
+      fill="currentColor"
+    >
+      <path
+        d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"
+      />
+    </svg>
+  </div>
+</section>

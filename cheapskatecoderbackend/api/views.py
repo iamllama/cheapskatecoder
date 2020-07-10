@@ -14,6 +14,14 @@ class BlogModelViewSet(ModelViewSet):
     queryset = Blog.objects.filter(is_published=True)
     serializer_class = BlogModelSerializer
 
+    def retrieve(self, request, pk):
+        if pk is not None:
+            specific_blog_instance = Blog.objects.filter(slug=pk).first()
+            serialized_data = BlogModelSerializer(specific_blog_instance)
+            return Response(serialized_data.data, status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
 
 class SeriesModelViewSet(ModelViewSet):
     permission_classes = [AllowAny, ]

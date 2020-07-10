@@ -1,87 +1,22 @@
 <section class="bg-white py-10">
   <div class="container">
+    <h2 class="text-center page-header-title">
+      Take a look at my latest blogs
+    </h2>
     <div class="card-columns card-columns-portfolio">
-      <a *ngFor="let blog of topNineBlogs" class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/jWQj5Wjepuk/400x300"
-          alt="..."
-        />
-        <div class="card-body"><div class="card-title">{{blog.title}}</div></div>
+      <a
+        *ngFor="let blog of topNineBlogs"
+        class="card card-portfolio"
+        [routerLink]="['blog', blog.slug]"
+        ><img class="card-img-top" src="{{ blog.blog_thumbnail }}" alt="..." />
+        <div class="card-body">
+          <div class="card-title">
+            {{ blog.title }}
+            <hr />
+            {{ blog.meta_summary }}
+          </div>
+        </div>
       </a>
-      <a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/Ecnx13MEPK0/400x500"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">Flower Mug</div>
-        </div></a
-      ><a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/eUCy1jb_B7I/400x400"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">Cactus Display</div>
-        </div></a
-      ><a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/cuTcfqsES6o/400x500"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">Reading</div>
-        </div></a
-      ><a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/jipR1oTCO7U/400x400"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">White Book</div>
-        </div></a
-      ><a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/n3sqjJzZiBM/400x300"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">Photo Face</div>
-        </div></a
-      ><a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/Zr7MxECDTQ8/400x300"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">Catalog</div>
-        </div></a
-      ><a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/QcyenJDqDzw/400x500"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">Notebook</div>
-        </div></a
-      ><a class="card card-portfolio" href="#!"
-        ><img
-          class="card-img-top"
-          src="https://source.unsplash.com/TIutDBFEtcY/400x400"
-          alt="..."
-        />
-        <div class="card-body">
-          <div class="card-title">Book Stand</div>
-        </div></a
-      >
     </div>
   </div>
   <div class="svg-border-rounded text-light">
