@@ -7,6 +7,7 @@ import Blog from './../../../../models/blog.models';
   templateUrl: './specific-blog.component.html',
   styleUrls: ['./specific-blog.component.css'],
 })
+
 export class SpecificBlogComponent implements OnInit {
   constructor(private specificBlogService: SpecificBlogService) {}
   specificBlog: Blog;
@@ -16,5 +17,6 @@ export class SpecificBlogComponent implements OnInit {
     this.specificBlogService.getSpecificBlog(slug).subscribe((response) => {
       this.specificBlog = response;
     });
+    window.scrollTo(0, 0);
   }
 }

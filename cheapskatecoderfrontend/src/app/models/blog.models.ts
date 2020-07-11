@@ -1,5 +1,5 @@
 export default class Blog {
-    id: BigInteger;
+    id: number;
     title: string;
     slug: string;
     blog_thumbnail: string;
@@ -11,4 +11,6 @@ export default class Blog {
     categories: [];
     date_published: Date;
     username: string;
+    author_profile_photo: string;
+    author_full_name: string;
 }

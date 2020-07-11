@@ -11,12 +11,13 @@
             <div class="single-post-meta mr-4">
               <img
                 class="single-post-meta-img"
-                src="{{specificBlog.blog_banner_image}}"
+                alt="{{specificBlog.author_full_name}}"
+                src="{{specificBlog.author_profile_photo}}"
               />
               <div class="single-post-meta-details">
-                <div class="single-post-meta-details-name">Valerie Luna</div>
+                <div class="single-post-meta-details-name">{{specificBlog.author_full_name}}</div>
                 <div class="single-post-meta-details-date">
-                  Feb 5 &#xB7; 6 min read
+                  {{specificBlog.date_published}}
                 </div>
               </div>
             </div>
@@ -28,6 +29,7 @@
           </div>
           <img
             class="img-fluid mb-2"
+            alt="{{specificBlog.title}}"
             src="{{specificBlog.blog_banner_image}}"
           />
           <div class="small text-gray-500 text-center">

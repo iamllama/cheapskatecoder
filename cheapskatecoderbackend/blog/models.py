@@ -54,6 +54,9 @@ class Profile(models.Model):
     user = models.OneToOneField(User, null=False, blank=False, on_delete=models.CASCADE)
     profile_photo = models.FileField(upload_to='authors/', null=True, blank=True)
     about_me = models.TextField(null=True, blank=True)
+    twitter = models.CharField(max_length=255, null=True, blank=True)
+    youtube = models.CharField(max_length=255, null=True, blank=True)
+    github = models.CharField(max_length=255, null=True, blank=True)
     created_on  = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_on = models.DateTimeField(auto_now=True, null=True, blank=True)
 

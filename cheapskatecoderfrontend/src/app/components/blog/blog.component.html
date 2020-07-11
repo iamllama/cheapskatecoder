@@ -1,1 +1,109 @@
-<p>blog works!</p>
+<section class="bg-light py-5">
+  <div class="container">
+    <a
+      class="card post-preview post-preview-featured lift mb-5"
+      [routerLink]="['blogs', 'asdf']"
+      ><div class="row no-gutters">
+        <div class="col-lg-5">
+          <div
+            class="post-preview-featured-img"
+            style="
+              background-image: url('{{allBlogs.results[0].blog_banner_image}}');"
+          ></div>
+        </div>
+        <div class="col-lg-7">
+          <div class="card-body">
+            <div class="py-5">
+              <h5 class="card-title">
+                {{ allBlogs.results[0].title }}
+              </h5>
+              <p class="card-text">
+                {{ allBlogs.results[0].meta_summary }}
+              </p>
+            </div>
+            <hr />
+            <div class="post-preview-meta">
+              <img
+                class="post-preview-meta-img"
+                src="{{ allBlogs.results[0].author_profile_photo }}"
+              />
+              <div class="post-preview-meta-details">
+                <div class="post-preview-meta-details-name">
+                  {{ allBlogs.results[0].author_full_name }}
+                </div>
+                <div class="post-preview-meta-details-date">
+                  {{ allBlogs.results[0].date_published }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></a
+    >
+    <div class="row">
+      <div *ngFor="let blog of allBlogs.results" class="col-md-6 col-xl-4 mb-5">
+        <a class="card post-preview lift h-100" [routerLink]="['blogs', blog.slug]"
+          ><img
+            class="card-img-top"
+            src="{{blog.blog_thumbnail}}"
+            alt="{{blog.title}}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{blog.title}}</h5>
+            <p class="card-text">
+              {{blog.meta_summary}}
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="post-preview-meta">
+              <img
+                class="post-preview-meta-img"
+                src="{{blog.author_profile_photo}}"
+                alt="{{blog.author_full_name}}"
+              />
+              <div class="post-preview-meta-details">
+                <div class="post-preview-meta-details-name">{{blog.author_full_name}}</div>
+                <div class="post-preview-meta-details-date">
+                  {{blog.date_published}}
+                </div>
+              </div>
+            </div>
+          </div></a
+        >
+      </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination pagination-blog justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#!" aria-label="Previous"
+            ><span aria-hidden="true">&#xAB;</span></a
+          >
+        </li>
+        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+        <li class="page-item"><a class="page-link" href="#!">2</a></li>
+        <li class="page-item"><a class="page-link" href="#!">3</a></li>
+        <li class="page-item disabled">
+          <a class="page-link" href="#!">...</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#!">12</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#!" aria-label="Next"
+            ><span aria-hidden="true">&#xBB;</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="svg-border-rounded text-dark">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 144.54 17.34"
+      preserveAspectRatio="none"
+      fill="currentColor"
+    >
+      <path
+        d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"
+      />
+    </svg>
+  </div>
+</section>

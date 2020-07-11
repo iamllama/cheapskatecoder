@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
-  { path: 'blog', component: BlogComponent},
-  {path: 'blog/:slug', component: SpecificBlogComponent}
+  { path: 'blogs', component: BlogComponent},
+  {path: 'blogs/:slug', component: SpecificBlogComponent}
 ];
 
 @NgModule({

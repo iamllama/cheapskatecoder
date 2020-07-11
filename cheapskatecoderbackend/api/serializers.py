@@ -11,6 +11,22 @@ class BlogModelSerializer(ModelSerializer):
     username = SerializerMethodField()
     blog_thumbnail = serializers.SerializerMethodField()
     blog_banner_image = serializers.SerializerMethodField()
+    author_profile_photo = serializers.SerializerMethodField()
+    author_full_name = serializers.SerializerMethodField()
+    date_published = serializers.SerializerMethodField()
+
+    def get_date_published(self, instance):
+        return instance.date_published.strftime('%d-%m-%Y - %A')
+
+    def get_author_full_name(self, instance):
+        return instance.author.first_name+' '+instance.author.last_name
+
+    def get_author_profile_photo(self, instance):
+        try:
+            return settings.SITE_URL+instance.author.profile.profile_photo.url
+        except Exception as e:
+            print(e)
+            return ""
 
     def get_blog_banner_image(self, instance):
         try:
@@ -30,7 +46,7 @@ class BlogModelSerializer(ModelSerializer):
     class Meta:
         model = Blog
         fields = ('title', 'slug', 'meta_summary', 'blog_content', 'date_published', 'series', 'categories', 'username', 'blog_thumbnail',
-                'blog_banner_image')
+                'blog_banner_image', 'author_profile_photo', 'author_full_name')
         depth = 1
 
 

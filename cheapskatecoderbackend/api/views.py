@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class BlogModelViewSet(ModelViewSet):
     permission_classes = [AllowAny, ]
-    queryset = Blog.objects.filter(is_published=True)
+    queryset = Blog.objects.filter(is_published=True).order_by('-id')
     serializer_class = BlogModelSerializer
 
     def retrieve(self, request, pk):

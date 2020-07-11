@@ -78,6 +78,9 @@ REST_FRAMEWORK = {
                                        'rest_framework.authentication.BasicAuthentication',
                                        'rest_framework.authentication.SessionAuthentication',
                                       ],
+    'DATE_TIME_FORMATS': ['%d-%m-%Y'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 7
 }
 
 # Password validation
